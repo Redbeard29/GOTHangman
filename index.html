@@ -20,8 +20,20 @@
         <body>
             <div id="overlay"></div>
             <div id="showcase">
-                <div id="header" class= "container text-center text-white p-5">
-                  <h1 class="text-uppercase mb-4" id="showcase_heading">Game of Thrones Hangman</h1>
+                <div class="container-fluid text-white p-5">
+                    <div class="row">
+                        <div class="col-2" id="new_game_display">
+                            <p class="lead text-white float-left">button to change house selection or start new game here</p>
+                        </div>
+                        <div class="col-8 text-center" id="word_display">
+                            <h1>For house stark</h1>
+                            <h1 class="display-4 text-uppercase mt-5 mb-0" id="showcase_heading">word here</h1>
+                        </div>
+                        <div class="col-2" id="guess_display">
+                            <p class="lead text-white float-right">Guesses: </p>
+                            <p class="lead text-white float-right">Guesses: </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="container-fluid my-5 pl-5" id="main_body_container">
                     <div class="row">
