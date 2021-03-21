@@ -12,26 +12,38 @@
             <!------ Linked CSS sheet ----->
             <link rel="stylesheet" href="app.css">
 
+            <!------ Font Awesome Icons ----->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
             <!------ Imported font ----->
             <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+
+            <!------ jQuery ----->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
             <title>Game of Thrones Hangman</title>
         </head>
         <body>
             <div id="overlay"></div>
             <div id="showcase">
-                <div class="container-fluid text-white p-5">
-                    <div class="row">
+                <div class="container-fluid text-white p-4">
+                    <div class="row align-items-center">
                         <div class="col-2" id="new_game_display">
-                            <p class="lead text-white float-left">button to change house selection or start new game here</p>
+                            <i class="fas fa-home fa-4x text-white d-block"></i> 
                         </div>
-                        <div class="col-8 text-center" id="word_display">
-                            <h1>For house stark</h1>
-                            <h1 class="display-4 text-uppercase mt-5 mb-0" id="showcase_heading">word here</h1>
+                        <div class="col-8 text-center" id="house_display">
+                            <h2 class="text-uppercase text-white">house here</h2>
                         </div>
                         <div class="col-2" id="guess_display">
-                            <p class="lead text-white float-right">Guesses: </p>
-                            <p class="lead text-white float-right">Guesses: </p>
+                            <h4 class="text-right" id="guesses">Guesses: </h4>
+                            <h4 class="text-right" id="wins">Wins: </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-white">
+                    <div class="row align-items-center" id="word_display">
+                        <div class="col text-center">
+                            <h1 class="display-4 text-uppercase" id="word_spotlight">word here</h1>
                         </div>
                     </div>
                 </div>

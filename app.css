@@ -3,7 +3,7 @@ body{
     min-height: 900px;
     font-family: "Della Respira", serif;
     position: relative; }
-    body #word_display, body #guess_display, body #new_game_display {
+    body #word_display, body #guess_display, body #new_game_display, body #house_display{
         position: relative;
         z-index: 2; }
       body #overlay {
