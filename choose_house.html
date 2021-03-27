@@ -10,7 +10,7 @@
             crossorigin="anonymous">
             
             <!------ Linked CSS sheet ----->
-            <link rel="stylesheet" href="app.css">
+            <link rel="stylesheet" href="css/app.css">
 
             <!------ Font Awesome Icons ----->
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -23,24 +23,41 @@
 
             <title>GOT Hangman - Choose Your House</title>
         </head>
-        <body>
+        <body id="choose_house_body">
             <div class="container">
                 <div id="overlay"></div>
                 <div id="showcase">
                     <div class="container text-white p-5" id="house_heading_display">
-                        <div class="row align-items-center my-5">
-                            <div class="col py-5">
-                                <h1 class="text-uppercase text-center mt-5 font-weight-bold">Choose your house.</h1>
-                                <h1 class="text-uppercase text-center mb-5 font-weight-bold">You have pledged your allegiance to:</h1>
+                        <div class="row align-items-center">
+                            <div class="col pt-3 pb-5">
+                                <h1 class="display-4 text-uppercase text-center font-weight-bold">Choose your house</h1>
+                                <h1 class="display-4 text-uppercase text-center font-weight-bold" id="chosen_house"></h1>
                             </div>
                         </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <button class="btn btn-outline-light btn-lg text-white font-weight-bold text-uppercase px-5">play</button>
-                            </div>
+                        <div class="row justify-content-center my-5 px-4 px-md-0">
+                            <div class="card mb-5 border-light bg-transparent shadow-lg hidden_element">
+                                <h3 class="card-header border-light text-center text-uppercase">You have pledged your allegiance to: <br><span>House </span></h3>
+                                <div class="card-body text-center">
+                                  <img src="images/javascriptlogo.png" alt="jslogo" class="m-3 tech_logos">
+                                  <img src="images/Csharplogo.png" alt="c#logo" class="m-3 tech_logos">
+                                  <img src="images/sqllogo.png" alt="sqllogo" class="m-3 tech_logos">
+                                  <img src="images/react.png" alt="reactlogo" class="m-3 tech_logos">
+                                  <img src="images/python.png" alt="pythonlogo" class="m-3 tech_logos">
+                                  <img src="images/bootstrap.png" alt="bootstraplogo" class="m-3 tech_logos">
+                                  <img src="images/csslogo.png" alt="csslogo" class="m-3 tech_logos">
+                                  <img src="images/HTMLLogo.png" alt="htmllogo" class="m-3 tech_logos">
+                                  <hr>
+                                  <!------ Houses: Arryn, Baratheon, Greyjoy, Lannister, Martell, Stark, Tully, Frey, Bolton, Tyrell, Targaryen -------->
+                                </div>
+                                <div class="card-footer border-light justify-content-center">
+                                    <a href="/hangman.html" class="btn btn-outline-light btn-lg d-block text-uppercase py-2 my-1" id="view_projects_button">Play</a>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!------ JavaScript ----->
+            <script src="js/hangman.js"></script>
         </body>
     </html>

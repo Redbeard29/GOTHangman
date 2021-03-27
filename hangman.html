@@ -10,7 +10,7 @@
             crossorigin="anonymous">
             
             <!------ Linked CSS sheet ----->
-            <link rel="stylesheet" href="app.css">
+            <link rel="stylesheet" href="css/app.css">
 
             <!------ Font Awesome Icons ----->
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -23,7 +23,7 @@
 
             <title>Game of Thrones Hangman</title>
         </head>
-        <body>
+        <body id="main_game_body">
             <div id="overlay"></div>
             <div id="showcase">
                 <div class="container-fluid text-white p-5">
@@ -32,7 +32,7 @@
                             <i class="fas fa-home fa-4x text-white d-block"></i> 
                         </div>
                         <div class="col-8 text-center" id="house_display">
-                            <h2 class="text-uppercase text-white">house here</h2>
+                            <h2 class="text-uppercase text-white font-weight-bold" id="chosen_house">For house </h2>
                         </div>
                         <div class="col-2" id="guess_display">
                             <h4 class="text-right" id="guesses">Guesses: </h4>
@@ -43,7 +43,7 @@
                 <div class="container-fluid text-white">
                     <div class="row align-items-center" id="word_display">
                         <div class="col text-center">
-                            <h1 class="display-4 text-uppercase" id="word_spotlight">word here</h1>
+                            <h1 class="display-4 text-uppercase" id="word_spotlight"></h1>
                         </div>
                     </div>
                 </div>
@@ -83,6 +83,7 @@
                     </div>
                 </div>
             </div>
-            <script src="hangman.js"></script>
+            <!------ JavaScript ----->
+            <script src="js/hangman.js"></script>
         </body>
     </html>
