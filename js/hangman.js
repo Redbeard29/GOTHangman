@@ -18,15 +18,14 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 const list_of_houses = ['Arryn', 'Baratheon', 'Greyjoy', 'Lannister', 'Martell', 'Stark', 'Tully', 'Frey', 'Bolton', 'Tyrell', 'Targaryen'];
 let guesses = 6;
 let wins = 0;
-
+let house = getWord(list_of_houses);
 function getWord(array){
     const randIdx = Math.floor(Math.random() * array.length);
     const word = (array[randIdx]).toUpperCase();
     return word;
 }
 
-
 document.getElementById('guesses').innerHTML += guesses;
 document.getElementById('wins').innerHTML += wins;
 document.getElementById('word_spotlight').innerHTML = getWord(word_array);
-document.getElementById('chosen_house').innerHTML += getWord(list_of_houses);
+document.getElementById('chosen_house').innerHTML += house;
