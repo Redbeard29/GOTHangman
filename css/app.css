@@ -20,6 +20,7 @@ body #overlay {
 #swords{
   height: 200px;
 }
+
 #sword_card, #choose_house_card{
   border: 4px solid white;
 }
@@ -37,7 +38,11 @@ body #overlay {
   z-index: 1;
 }
 
-.letters{
+#letters{
   border: 4px solid white;
   width: 95px;
+}
+
+#hangman{
+  height: 400px;
 }
