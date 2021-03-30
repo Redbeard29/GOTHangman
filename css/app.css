@@ -1,4 +1,4 @@
-#main_game_body, #index_body, #choose_house_body{
+body{
   background: url("../images/mistyforest.jpg") center/cover no-repeat;
   min-height: 900px;
   font-family: "Della Respira", serif;
@@ -33,12 +33,24 @@ body #overlay {
   border-top: 4px solid white;
 }
 
+.sigils{
+  height: 150px;
+}
+
+.active{
+  border: 4px solid white;
+}
+
+#home_link{
+  text-decoration: none;
+}
+
 #main_body_container{
   position: relative;
   z-index: 1;
 }
 
-#letters{
+.letters{
   border: 4px solid white;
   width: 95px;
 }

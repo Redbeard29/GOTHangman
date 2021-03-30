@@ -18,6 +18,10 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 const list_of_houses = ['Arryn', 'Baratheon', 'Greyjoy', 'Lannister', 'Martell', 'Stark', 'Tully', 'Frey', 'Bolton', 'Tyrell', 'Targaryen'];
 let guesses = 6;
 let wins = 0;
+let answer = '';
+let guessedLetters = [];
+let wordDisplay = null;
+
 const house = getWord(list_of_houses);
 const word = getWord(word_array);
 
@@ -27,12 +31,20 @@ function getWord(array){
     return word;
 }
 
+function formatWord(){
+    wordDisplay = word.split('').map(letter => (guessedLetters.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+
+    document.getElementById('word_spotlight').innerHTML = wordDisplay;
+}
+
+
 function createLetters(){
     let letterList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter =>
         `
             <h1
-                class="d-inline-block display-4 font-weight-bold text-center mr-2 mt-2 py-2"
-                id="letters"
+                class="d-inline-block display-4 font-weight-bold text-center mr-2 mt-2 py-2 letters"
+                id="` + letter + `"
+                onClick="handleGuess('` + letter + `')"
             >
                 ` + letter + `
             </h1>
@@ -40,9 +52,23 @@ function createLetters(){
     document.getElementById('letter_column').innerHTML = letterList;
 }
 
+function handleGuess(letter){
+    for(let x = 0; x < guessedLetters.length; x++){
+        if(guessedLetters[x] === letter){
+            document.getElementById(letter).setAttribute('disabled', true);
+        }
+        else{
+            guessedLetters.push(letter);
+        }
+    }
+    console.log(guessedLetters);
+}
+
+
 document.getElementById('guesses').innerHTML += guesses;
 document.getElementById('wins').innerHTML += wins;
-document.getElementById('word_spotlight').innerHTML = word;
 document.getElementById('chosen_house').innerHTML += house;
 
 createLetters();
+formatWord();
+handleGuess();

@@ -29,25 +29,27 @@
                 <div id="showcase">
                     <div class="container text-white p-5" id="house_heading_display">
                         <div class="row align-items-center">
-                            <div class="col py-5">
+                            <div class="col py-3">
                                 <h1 class="display-4 text-uppercase text-center font-weight-bold">Choose your house</h1>
                                 <h1 class="display-4 text-uppercase text-center font-weight-bold" id="chosen_house"></h1>
                             </div>
                         </div>
                         <div class="row justify-content-center my-3 px-4 px-md-0">
-                            <div class="col-10 mt-3">
+                            <div class="col-12 mt-3">
                                 <div class="card mb-5 border-light bg-transparent shadow-lg hidden_element" id="choose_house_card">
-                                    <h3 class="card-header border-light text-center text-uppercase" id="choose_house_card_header">You have pledged your allegiance to: <br><span id="house_choice_display">House </span></h3>
-                                    <div class="card-body text-center">
-                                      <img src="images/javascriptlogo.png" alt="jslogo" class="m-3 tech_logos">
-                                      <img src="images/Csharplogo.png" alt="c#logo" class="m-3 tech_logos">
-                                      <img src="images/sqllogo.png" alt="sqllogo" class="m-3 tech_logos">
-                                      <img src="images/react.png" alt="reactlogo" class="m-3 tech_logos">
-                                      <img src="images/python.png" alt="pythonlogo" class="m-3 tech_logos">
-                                      <img src="images/bootstrap.png" alt="bootstraplogo" class="m-3 tech_logos">
-                                      <img src="images/csslogo.png" alt="csslogo" class="m-3 tech_logos">
-                                      <img src="images/HTMLLogo.png" alt="htmllogo" class="m-3 tech_logos">
-                                      <hr>
+                                    <h3 class="card-header border-light text-center text-uppercase" id="choose_house_card_header">You have pledged your allegiance to: <br><span id="house_choice_display">House Arryn</span></h3>
+                                    <div class="card-body text-center" id="sigil_holder">
+                                        <img src="images/housearryn.png" alt="house_arryn" class="mx-2 my-4 sigils active" data-house="arryn">
+                                        <img src="images/housebaratheon.png" alt="house_baratheon" class="mx-2 my-4 sigils" data-house="baratheon">
+                                        <img src="images/housebolton.png" alt="house_bolton" class="mx-2 my-4 sigils" data-house="bolton">
+                                        <img src="images/housefrey.png" alt="house_frey" class="mx-2 my-4 sigils" data-house="frey">
+                                        <img src="images/housegreyjoy.png" alt="house_greyjoy" class="mx-2 my-4 sigils" data-house="greyjoy">
+                                        <img src="images/houselannister.png" alt="house_lannister" class="mx-2 my-4 sigils" data-house="lannister">
+                                        <img src="images/housemartell.png" alt="house_martell" class="mx-2 my-4 sigils" data-house="martell">
+                                        <img src="images/housestark.png" alt="house_stark" class="mx-2 my-4 sigils" data-house="stark">
+                                        <img src="images/housetargaryen.png" alt="house_targaryen" class="mx-2 my-4 sigils" data-house="targaryen">
+                                        <img src="images/housetully.png" alt="house_tully" class="mx-2 my-4 sigils" data-house="tully">
+                                        <img src="images/housetyrell.png" alt="house_tyrell" class="mx-2 my-4 sigils" data-house="tyrell">
                                       <!------ Houses: Arryn, Baratheon, Greyjoy, Lannister, Martell, Stark, Tully, Frey, Bolton, Tyrell, Targaryen -------->
                                     </div>
                                     <div class="card-footer border-light justify-content-center" id="choose_house_card_footer">
@@ -60,6 +62,6 @@
                 </div>
             </div>
             <!------ JavaScript ----->
-            <script src="js/hangman.js"></script>
+            <script src="js/choose_house.js"></script>
         </body>
     </html>
