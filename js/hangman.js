@@ -78,7 +78,8 @@ $(document).ready(function(){
     });
 
     $('#chosen_house').html('for house ' + localStorage.getItem('chosen_house'));
-    $('#chosen_house_sigils').add("src='images/house'" + house + '.png');
+    $('#chosen_house_sigil_left').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
+    $('#chosen_house_sigil_right').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
 });
 
 
