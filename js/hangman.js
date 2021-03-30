@@ -15,14 +15,14 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 "What do we say to the god of death? Not Today", "Where are my Dragons?", "White Walkers", "Winterfell", "Winter is coming", "Xaro Xhoan Daxos", 
 "You know nothing Jon Snow", "Ygritte"];
 
-const list_of_houses = ['Arryn', 'Baratheon', 'Greyjoy', 'Lannister', 'Martell', 'Stark', 'Tully', 'Frey', 'Bolton', 'Tyrell', 'Targaryen'];
+
+//Logic for hangman.html
 let guesses = 6;
 let wins = 0;
 let answer = '';
 let guessedLetters = [];
 let wordDisplay = null;
 
-const house = getWord(list_of_houses);
 const word = getWord(word_array);
 
 function getWord(array){
@@ -33,7 +33,6 @@ function getWord(array){
 
 function formatWord(){
     wordDisplay = word.split('').map(letter => (guessedLetters.indexOf(letter) >= 0 ? letter : " _ ")).join('');
-
     document.getElementById('word_spotlight').innerHTML = wordDisplay;
 }
 
@@ -61,13 +60,30 @@ function handleGuess(letter){
             guessedLetters.push(letter);
         }
     }
+    console.log(letter);
     console.log(guessedLetters);
 }
+
+// Logic for choose_house.html
+$(document).ready(function(){
+
+    $('.sigils').click(function(){
+        let house = $(this).attr('data-house');
+        $('#house_choice_display').html('house ' + house);
+
+        $('img:not([data-house=' + house + '])').removeClass('active');
+        $('img[data-house=' + house + ']').addClass('active');
+
+        localStorage.setItem('chosen_house', house);
+    });
+
+    $('#chosen_house').html('for house ' + localStorage.getItem('chosen_house'));
+    $('#chosen_house_sigils').add("src='images/house'" + house + '.png');
+});
 
 
 document.getElementById('guesses').innerHTML += guesses;
 document.getElementById('wins').innerHTML += wins;
-document.getElementById('chosen_house').innerHTML += house;
 
 createLetters();
 formatWord();
