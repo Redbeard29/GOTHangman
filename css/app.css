@@ -49,6 +49,11 @@ body #overlay {
   height: 100px;
 }
 
+#chosen_house{
+  border: solid white;
+  border-width: 4px 0 4px 0;
+}
+
 #main_body_container{
   position: relative;
   z-index: 1;

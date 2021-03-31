@@ -32,8 +32,9 @@ function getWord(array){
 }
 
 function formatWord(){
-    wordDisplay = word.split('').map(letter => (guessedLetters.indexOf(letter) >= 0 ? letter : " _ ")).join('');
-    document.getElementById('word_spotlight').innerHTML = wordDisplay;
+    formattedWord = word.split('').map(letter => (guessedLetters.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+    document.getElementById('word_spotlight').innerHTML = formattedWord;
+    console.log(word);
 }
 
 
@@ -52,21 +53,19 @@ function createLetters(){
 }
 
 function handleGuess(letter){
-    for(let x = 0; x < guessedLetters.length; x++){
-        if(guessedLetters[x] === letter){
-            document.getElementById(letter).setAttribute('disabled', true);
-        }
-        else{
-            guessedLetters.push(letter);
-        }
+    //If letter has not already been guessed, push it to guessed array
+    if(!(guessedLetters.includes(letter))){
+        guessedLetters.push(letter);
+        document.getElementById(letter).setAttribute('disabled', true);
     }
     console.log(letter);
     console.log(guessedLetters);
 }
 
-// Logic for choose_house.html
+
 $(document).ready(function(){
 
+    // Logic for choose_house.html
     $('.sigils').click(function(){
         let house = $(this).attr('data-house');
         $('#house_choice_display').html('house ' + house);
@@ -74,18 +73,22 @@ $(document).ready(function(){
         $('img:not([data-house=' + house + '])').removeClass('active');
         $('img[data-house=' + house + ']').addClass('active');
 
+        // Store chosen house in local storage
         localStorage.setItem('chosen_house', house);
     });
 
+    // Display chosen house name on hangman.html page
     $('#chosen_house').html('for house ' + localStorage.getItem('chosen_house'));
+
+    // Display chosen house sigils on hangman.html page
     $('#chosen_house_sigil_left').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
     $('#chosen_house_sigil_right').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
 });
 
-
+//Display guesses left
 document.getElementById('guesses').innerHTML += guesses;
+//Display number of wins
 document.getElementById('wins').innerHTML += wins;
 
 createLetters();
 formatWord();
-handleGuess();
