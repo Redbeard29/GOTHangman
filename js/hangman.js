@@ -34,7 +34,6 @@ function getWord(array){
 function formatWord(){
     formattedWord = word.split('').map(letter => (guessedLetters.indexOf(letter) >= 0 ? letter : " _ ")).join('');
     document.getElementById('word_spotlight').innerHTML = formattedWord;
-    console.log(word);
 }
 
 
@@ -44,7 +43,6 @@ function createLetters(){
             <h1
                 class="d-inline-block display-4 font-weight-bold text-center mr-2 mt-2 py-2 letters"
                 id="` + letter + `"
-                onClick="handleGuess('` + letter + `')"
             >
                 ` + letter + `
             </h1>
@@ -52,7 +50,7 @@ function createLetters(){
     document.getElementById('letter_column').innerHTML = letterList;
 }
 
-function handleGuess(letter){
+/* function handleGuess(letter){
     //If letter has not already been guessed, push it to guessed array
     if(!(guessedLetters.includes(letter))){
         guessedLetters.push(letter);
@@ -60,7 +58,7 @@ function handleGuess(letter){
     }
     console.log(letter);
     console.log(guessedLetters);
-}
+} */
 
 
 $(document).ready(function(){
@@ -83,6 +81,20 @@ $(document).ready(function(){
     // Display chosen house sigils on hangman.html page
     $('#chosen_house_sigil_left').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
     $('#chosen_house_sigil_right').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
+
+    // Add letters to guessedLetters array on click
+    $('#letter_column h1').click(function(){
+        const letter = $(this).attr('id');
+        guessedLetters.push(letter);
+        console.log(guessedLetters);
+        console.log(word);
+        if(word.includes(letter)){
+            $(this).removeClass('letters').addClass('correctly_guessed_letters');
+        }
+        else{
+            $(this).removeClass('letters').addClass('incorrectly_guessed_letters');
+        }
+    });
 });
 
 //Display guesses left
