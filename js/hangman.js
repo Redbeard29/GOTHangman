@@ -22,6 +22,8 @@ let wins = 0;
 let answer = '';
 let guessedLetters = [];
 let wordDisplay = null;
+let guessed = false;
+let gameOver = false;
 
 const word = getWord(word_array);
 
@@ -31,9 +33,26 @@ function getWord(array){
     return word;
 }
 
+
 function formatWord(){
-    formattedWord = word.split('').map(letter => (guessedLetters.indexOf(letter) >= 0 ? letter : " _ ")).join('');
-    document.getElementById('word_spotlight').innerHTML = formattedWord;
+    console.log(word);
+    const wordAsArray = word.split('')
+    
+    // potential method for joining around the spaces?
+    // let formattedWord = wordAsArray.map(char => char.length ? char : ' ').join('');
+
+    let result = wordAsArray.map(char => {
+        if(char.match(/^[A-Z]/)){
+            return guessedLetters.includes(char) ? char : " _ ";
+        }
+        if(char.match("^\\s+$")){
+            return ' / '
+        }
+        else{
+            return char;
+        }
+    }).join(''); 
+    document.getElementById('word_spotlight').innerHTML = result;
 }
 
 
@@ -49,17 +68,6 @@ function createLetters(){
         `).join('');
     document.getElementById('letter_column').innerHTML = letterList;
 }
-
-/* function handleGuess(letter){
-    //If letter has not already been guessed, push it to guessed array
-    if(!(guessedLetters.includes(letter))){
-        guessedLetters.push(letter);
-        document.getElementById(letter).setAttribute('disabled', true);
-    }
-    console.log(letter);
-    console.log(guessedLetters);
-} */
-
 
 $(document).ready(function(){
 
@@ -86,15 +94,25 @@ $(document).ready(function(){
     $('#letter_column h1').click(function(){
         const letter = $(this).attr('id');
         guessedLetters.push(letter);
-        console.log(guessedLetters);
-        console.log(word);
         if(word.includes(letter)){
             $(this).removeClass('letters').addClass('correctly_guessed_letters');
+            $(this).off('click');
+            formatWord(letter);
         }
         else{
             $(this).removeClass('letters').addClass('incorrectly_guessed_letters');
+            $(this).off('click');
+            guesses --;
+            $('#guesses').html('Guesses: ' + guesses);
         }
+        console.log(guesses);
+        console.log(guessedLetters);
     });
+
+    if(document.URL.includes('choose_house')){
+        localStorage.setItem('chosen_house', 'Arryn');
+    }
+
 });
 
 //Display guesses left

@@ -73,14 +73,14 @@ body #overlay {
   color: #cdd0d3;
   border: 4px solid #cdd0d3;
   width: 95px;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .incorrectly_guessed_letters{
   color: #dd3444;
   border: 4px solid #dd3444;
   width: 95px;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 #hangman{
