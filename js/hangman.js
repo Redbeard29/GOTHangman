@@ -37,16 +37,15 @@ function getWord(array){
 function formatWord(){
     console.log(word);
     const wordAsArray = word.split('')
-    
-    // potential method for joining around the spaces?
-    // let formattedWord = wordAsArray.map(char => char.length ? char : ' ').join('');
 
     let result = wordAsArray.map(char => {
         if(char.match(/^[A-Z]/)){
             return guessedLetters.includes(char) ? char : " _ ";
         }
+        // Check if word has spaces using regex
         if(char.match("^\\s+$")){
-            return ' / '
+            // Use template literals to fill those spaces
+            return '\xa0\xa0';
         }
         else{
             return char;
