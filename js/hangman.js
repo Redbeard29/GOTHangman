@@ -19,11 +19,9 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 //Logic for hangman.html
 let guesses = 6;
 let wins = 0;
-let answer = '';
+const guessCounter = {};
+const wordCounter = {};
 let guessedLetters = [];
-let wordDisplay = null;
-let guessed = false;
-let gameOver = false;
 
 const word = getWord(word_array);
 
@@ -33,25 +31,23 @@ function getWord(array){
     return word;
 }
 
-
 function formatWord(){
-    console.log(word);
-    const wordAsArray = word.split('')
-
-    let result = wordAsArray.map(char => {
+    let currentWordStatus = word.split('').map(char => {
+        //Check if char is alphanumeric - these are the only chars we want hidden
         if(char.match(/^[A-Z]/)){
             return guessedLetters.includes(char) ? char : " _ ";
         }
-        // Check if word has spaces using regex
+        //Check if word has spaces using regex
         if(char.match("^\\s+$")){
-            // Use template literals to fill those spaces
+            //Use template literals to fill those spaces
             return '\xa0\xa0';
         }
         else{
             return char;
         }
     }).join(''); 
-    document.getElementById('word_spotlight').innerHTML = result;
+    document.getElementById('word_spotlight').innerHTML = currentWordStatus;
+    checkWin(currentWordStatus);
 }
 
 
@@ -66,6 +62,20 @@ function createLetters(){
             </h1>
         `).join('');
     document.getElementById('letter_column').innerHTML = letterList;
+}
+
+function checkWin(currentWordStatus){
+    //The template literals in the formatting of the word display added extra spaces - in order to compare the final
+    // words, I'm elimating all spaces from the guessed word and the word itself in order to compare them. 
+    let wordWithoutSpaces = word.replace(/\s/g, '');
+    let guessedWordWithoutSpaces = currentWordStatus.replace(/\s/g, '');
+    if(wordWithoutSpaces === guessedWordWithoutSpaces){
+        console.log("You win!")
+    }
+}
+
+function checkLoss(){
+
 }
 
 $(document).ready(function(){
@@ -102,10 +112,9 @@ $(document).ready(function(){
             $(this).removeClass('letters').addClass('incorrectly_guessed_letters');
             $(this).off('click');
             guesses --;
+            checkLoss();
             $('#guesses').html('Guesses: ' + guesses);
         }
-        console.log(guesses);
-        console.log(guessedLetters);
     });
 
     if(document.URL.includes('choose_house')){
@@ -119,5 +128,5 @@ document.getElementById('guesses').innerHTML += guesses;
 //Display number of wins
 document.getElementById('wins').innerHTML += wins;
 
-createLetters();
 formatWord();
+createLetters();
