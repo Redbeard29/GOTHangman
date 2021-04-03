@@ -25,6 +25,11 @@ let guessedLetters = [];
 
 const word = getWord(word_array);
 
+//Display guesses left
+document.getElementById('guesses').innerHTML += guesses;
+//Display number of wins
+document.getElementById('wins').innerHTML += wins;
+
 function getWord(array){
     const randIdx = Math.floor(Math.random() * array.length);
     const word = (array[randIdx]).toUpperCase();
@@ -70,12 +75,16 @@ function checkWin(currentWordStatus){
     let wordWithoutSpaces = word.replace(/\s/g, '');
     let guessedWordWithoutSpaces = currentWordStatus.replace(/\s/g, '');
     if(wordWithoutSpaces === guessedWordWithoutSpaces){
-        console.log("You win!")
+        console.log("You win!");
+        wins ++;
+        console.log(wins);
     }
 }
 
 function checkLoss(){
-
+    if(guesses === 0){
+        console.log("You lose!");
+    }
 }
 
 $(document).ready(function(){
@@ -122,11 +131,6 @@ $(document).ready(function(){
     }
 
 });
-
-//Display guesses left
-document.getElementById('guesses').innerHTML += guesses;
-//Display number of wins
-document.getElementById('wins').innerHTML += wins;
 
 formatWord();
 createLetters();
