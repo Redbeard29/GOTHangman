@@ -19,16 +19,9 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 //Logic for hangman.html
 let guesses = 6;
 let wins = 0;
-const guessCounter = {};
-const wordCounter = {};
 let guessedLetters = [];
 
 const word = getWord(word_array);
-
-//Display guesses left
-document.getElementById('guesses').innerHTML += guesses;
-//Display number of wins
-document.getElementById('wins').innerHTML += wins;
 
 function getWord(array){
     const randIdx = Math.floor(Math.random() * array.length);
@@ -84,6 +77,7 @@ function checkWin(currentWordStatus){
 function checkLoss(){
     if(guesses === 0){
         console.log("You lose!");
+        wins = 0;
     }
 }
 
@@ -119,18 +113,45 @@ $(document).ready(function(){
         }
         else{
             $(this).removeClass('letters').addClass('incorrectly_guessed_letters');
+            //Disable buttons of already guessed letters
             $(this).off('click');
+
+            //Decrement guesses after incorrect guess
             guesses --;
-            checkLoss();
+
+            /* Swap original hangman for scream on incorrect guess, decrementing hangman index at same rate as
+            guess index */
+            let hangmanIdx = $('#hangman_pos_' + guesses);
+            let hangmanTemp = hangmanIdx.attr('src');
+            hangmanIdx.attr('src', hangmanIdx.attr('alt-src'));
+            hangmanIdx.attr('alt-src', hangmanTemp);
+            hangmanIdx.removeClass('hangman').addClass('scream').addClass('mb-3');
+            
+            // same concept but with fire index
+            let fireIdx = $('#fire_pos_' + guesses);
+            let fireTemp = fireIdx.attr('src');
+            fireIdx.attr('src', fireIdx.attr('alt-src'));
+            fireIdx.attr('alt-src', fireTemp);
+
+            //Replace html guess count with correctly decremented number
             $('#guesses').html('Guesses: ' + guesses);
+            //Check if game over
+            checkLoss();
         }
     });
 
     if(document.URL.includes('choose_house')){
         localStorage.setItem('chosen_house', 'Arryn');
     }
-
+    
 });
+
+
+//Display guesses left
+document.getElementById('guesses').innerHTML += guesses;
+//Display number of wins
+document.getElementById('wins').innerHTML += wins;
+
 
 formatWord();
 createLetters();

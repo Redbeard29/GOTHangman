@@ -28,7 +28,7 @@
             <div id="showcase">
                 <div class="container-fluid text-white pt-5 pb-3">
                     <div class="row align-items-center">
-                        <div class="col-2 pl-lg-4" id="new_game_display">
+                        <div class="col-2 text-center pl-lg-4" id="new_game_display">
                             <a href="/index.html" id="home_link"><i class="fas fa-home fa-4x text-white d-block"></i></a>
                         </div>
                         <div class="col-8 text-center" id="house_display">
@@ -36,7 +36,7 @@
                             <h2 class="text-uppercase text-white font-weight-bold d-inline-block mx-3" id="chosen_house">For house </h2>
                             <img alt="image of chosen house here" id="chosen_house_sigil_right" class="d-none d-lg-inline-block">
                         </div>
-                        <div class="col-2 pr-lg-4" id="guess_display">
+                        <div class="col-2 text-center pr-lg-4" id="guess_display">
                             <h4 class="text-right" id="guesses">Guesses: </h4>
                             <h4 class="text-right" id="wins">Wins: </h4>
                         </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="container-fluid text-white">
                     <div class="row align-items-center" id="word_display">
-                        <div class="col text-center pb-2">
+                        <div class="col text-center pb-2 text-center">
                             <h1 class="display-4 text-uppercase" id="word_spotlight"></h1>
                         </div>
                     </div>
@@ -53,9 +53,36 @@
                     <div class="row">
                         <!---- letter column -->
                         <div class="col text-white" id="letter_column"></div>
-                        <!---- hangman column -->
+                        <!---- larger hangman column -->
                         <div class="col text-white text-center pr-5">
-                            <img src="images/hangman.png" id="hangman" class="d-block mx-auto">
+                            <div class="row mt-3">
+                                <div class="col-4">
+                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_5" class="d-block hangman mx-auto">
+                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_5" class="d-block logs mx-auto">
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_4" class="d-block hangman mx-auto">
+                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_4" class="d-block logs mx-auto">
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_3" class="d-block hangman mx-auto">
+                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_3" class="d-block logs mx-auto">
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-4 text-center">
+                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_2" class="d-block hangman mx-auto">
+                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_2" class="d-block logs mx-auto">
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_1" class="d-block hangman mx-auto">
+                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_1" class="d-block logs mx-auto">
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_0" class="d-block hangman mx-auto">
+                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_0" class="d-block logs mx-auto">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

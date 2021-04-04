@@ -83,6 +83,14 @@ body #overlay {
   opacity: 0.5;
 }
 
-#hangman{
-  height: 400px;
+.hangman{
+  height: 130px;
+}
+
+.scream{
+  height: 115px;
+}
+
+.logs{
+  height: 100px;
 }
