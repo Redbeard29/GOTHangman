@@ -1,9 +1,9 @@
 body{
   background: url("../images/mistyforest.jpg") center/cover no-repeat;
-  min-height: 900px;
+  min-height: 100%;
   font-family: "Della Respira", serif;
   position: relative; }
-body #word_display, body #guess_display, body #new_game_display, body #house_display, body #homepage_heading_display, body #house_heading_display{
+body #word_display, body #guess_display, body #new_game_display, body #house_display, body #homepage_heading_display, body #house_heading_display, body #modal_button{
   position: relative;
   z-index: 2; }
 body #overlay {

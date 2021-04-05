@@ -20,6 +20,8 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 let guesses = 6;
 let wins = 0;
 let guessedLetters = [];
+let win = false;
+let lose = false;
 
 const word = getWord(word_array);
 
@@ -45,7 +47,7 @@ function formatWord(){
         }
     }).join(''); 
     document.getElementById('word_spotlight').innerHTML = currentWordStatus;
-    checkWin(currentWordStatus);
+    checkWinOrLoss(currentWordStatus);
 }
 
 
@@ -62,22 +64,20 @@ function createLetters(){
     document.getElementById('letter_column').innerHTML = letterList;
 }
 
-function checkWin(currentWordStatus){
+function checkWinOrLoss(currentWordStatus){
     //The template literals in the formatting of the word display added extra spaces - in order to compare the final
     // words, I'm elimating all spaces from the guessed word and the word itself in order to compare them. 
     let wordWithoutSpaces = word.replace(/\s/g, '');
     let guessedWordWithoutSpaces = currentWordStatus.replace(/\s/g, '');
     if(wordWithoutSpaces === guessedWordWithoutSpaces){
-        console.log("You win!");
+        console.log("You win!")
         wins ++;
-        console.log(wins);
+        win = true;
     }
-}
-
-function checkLoss(){
-    if(guesses === 0){
+    else if(guesses === 0){
         console.log("You lose!");
         wins = 0;
+        lose = true;
     }
 }
 
@@ -109,7 +109,12 @@ $(document).ready(function(){
         if(word.includes(letter)){
             $(this).removeClass('letters').addClass('correctly_guessed_letters');
             $(this).off('click');
+
+            //Call formatWord, which will check for win
             formatWord(letter);
+            if(win){
+                $('#winningModal').modal('show');
+            }
         }
         else{
             $(this).removeClass('letters').addClass('incorrectly_guessed_letters');
@@ -119,7 +124,7 @@ $(document).ready(function(){
             //Decrement guesses after incorrect guess
             guesses --;
 
-            /* Swap original hangman for scream on incorrect guess, decrementing hangman index at same rate as
+            /* Swap original hangman for dead icon on incorrect guess, decrementing hangman index at same rate as
             guess index */
             let hangmanIdx = $('#hangman_pos_' + guesses);
             let hangmanTemp = hangmanIdx.attr('src');
@@ -135,11 +140,28 @@ $(document).ready(function(){
 
             //Replace html guess count with correctly decremented number
             $('#guesses').html('Guesses: ' + guesses);
-            //Check if game over
-            checkLoss();
+
+            //Call format word, which will check for loss
+            formatWord(letter);
+            if(lose){
+                $('#losingModal').modal('show');
+            }
         }
     });
 
+    //Refresh page on win to start new game
+    $("#winning_button").click(function(){
+        $('#winningModal').hide('slow');
+        location.reload();
+    });
+
+    //Refresh page on lose to start new game
+    $("#losing_button").click(function(){
+        $('#losingModal').hide('slow');
+        location.reload();
+    });
+
+    //Sets default house to House Arryn on selection page
     if(document.URL.includes('choose_house')){
         localStorage.setItem('chosen_house', 'Arryn');
     }

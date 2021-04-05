@@ -5,9 +5,8 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <!------ Bootstrap CDN ----->
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-            crossorigin="anonymous">
+            <!------ Bootstrap CSS ----->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             
             <!------ Linked CSS sheet ----->
             <link rel="stylesheet" href="css/app.css">
@@ -18,76 +17,124 @@
             <!------ Imported font ----->
             <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
 
-            <!------ jQuery ----->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
             <title>Game of Thrones Hangman</title>
         </head>
-        <body id="main_game_body">
-            <div id="overlay"></div>
-            <div id="showcase">
-                <div class="container-fluid text-white pt-5 pb-3">
-                    <div class="row align-items-center">
-                        <div class="col-2 text-center pl-lg-4" id="new_game_display">
-                            <a href="/index.html" id="home_link"><i class="fas fa-home fa-4x text-white d-block"></i></a>
-                        </div>
-                        <div class="col-8 text-center" id="house_display">
-                            <img alt="image of chosen house here" id="chosen_house_sigil_left" class="d-none d-lg-inline-block">
-                            <h2 class="text-uppercase text-white font-weight-bold d-inline-block mx-3" id="chosen_house">For house </h2>
-                            <img alt="image of chosen house here" id="chosen_house_sigil_right" class="d-none d-lg-inline-block">
-                        </div>
-                        <div class="col-2 text-center pr-lg-4" id="guess_display">
-                            <h4 class="text-right" id="guesses">Guesses: </h4>
-                            <h4 class="text-right" id="wins">Wins: </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid text-white">
-                    <div class="row align-items-center" id="word_display">
-                        <div class="col text-center pb-2 text-center">
-                            <h1 class="display-4 text-uppercase" id="word_spotlight"></h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid my-4 pl-5" id="main_body_container">
-                    <div class="row">
-                        <!---- letter column -->
-                        <div class="col text-white" id="letter_column"></div>
-                        <!---- larger hangman column -->
-                        <div class="col text-white text-center pr-5">
-                            <div class="row mt-3">
-                                <div class="col-4">
-                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_5" class="d-block hangman mx-auto">
-                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_5" class="d-block logs mx-auto">
-                                </div>
-                                <div class="col-4 text-center">
-                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_4" class="d-block hangman mx-auto">
-                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_4" class="d-block logs mx-auto">
-                                </div>
-                                <div class="col-4 text-center">
-                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_3" class="d-block hangman mx-auto">
-                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_3" class="d-block logs mx-auto">
-                                </div>
+        <body>
+            <div id="main_game_body" class="pb-5">
+                <div id="overlay"></div>
+                <div id="showcase">
+                    <div class="container-fluid text-white pt-5 pb-3">
+                        <div class="row align-items-center">
+                            <div class="col-2 text-left pl-lg-4" id="new_game_display">
+                                <a href="/index.html" id="home_link"><i class="fas fa-home fa-4x text-white d-block"></i></a>
                             </div>
-                            <div class="row mt-5">
-                                <div class="col-4 text-center">
-                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_2" class="d-block hangman mx-auto">
-                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_2" class="d-block logs mx-auto">
+                            <div class="col-8 text-center" id="house_display">
+                                <img alt="image of chosen house here" id="chosen_house_sigil_left" class="d-none d-lg-inline-block">
+                                <h2 class="text-uppercase text-white font-weight-bold d-inline-block mx-3" id="chosen_house">For house </h2>
+                                <img alt="image of chosen house here" id="chosen_house_sigil_right" class="d-none d-lg-inline-block">
+                            </div>
+                            <div class="col-2 text-center pr-lg-4" id="guess_display">
+                                <h4 class="text-right" id="guesses">Guesses: </h4>
+                                <h4 class="text-right" id="wins">Wins: </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid text-white">
+                        <div class="row align-items-center" id="word_display">
+                            <div class="col text-center pb-2 text-center">
+                                <h1 class="display-4 text-uppercase" id="word_spotlight"></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid my-4 pl-5" id="main_body_container">
+                        <div class="row">
+                            <!---- letter column -->
+                            <div class="col text-white" id="letter_column"></div>
+                            <!---- larger hangman column -->
+                            <div class="col text-white text-center pr-5">
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_5" class="d-block hangman mx-auto">
+                                        <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_5" class="d-block logs mx-auto">
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_4" class="d-block hangman mx-auto">
+                                        <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_4" class="d-block logs mx-auto">
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_3" class="d-block hangman mx-auto">
+                                        <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_3" class="d-block logs mx-auto">
+                                    </div>
                                 </div>
-                                <div class="col-4 text-center">
-                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_1" class="d-block hangman mx-auto">
-                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_1" class="d-block logs mx-auto">
-                                </div>
-                                <div class="col-4 text-center">
-                                    <img src="images/hangman.png" alt-src="images/scream.png" alt="hangman" id="hangman_pos_0" class="d-block hangman mx-auto">
-                                    <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_0" class="d-block logs mx-auto">
+                                <div class="row mt-5">
+                                    <div class="col-4 text-center">
+                                        <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_2" class="d-block hangman mx-auto">
+                                        <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_2" class="d-block logs mx-auto">
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_1" class="d-block hangman mx-auto">
+                                        <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_1" class="d-block logs mx-auto">
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_0" class="d-block hangman mx-auto">
+                                        <img src="images/logs.png" alt-src="images/fire.png" alt="logs_no_fire" id="fire_pos_0" class="d-block logs mx-auto">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!------ JavaScript ----->
+            
+            <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-labelledby="winningModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h1 class="text-uppercase">You win!</h1>
+                            <h3 id="house_proud_modal"></h3>
+
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-secondary text-uppercase" data-dismiss="modal" id="winning_button">next puzzle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="losingModal" tabindex="-1" role="dialog" aria-labelledby="losingModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h1 class="text-uppercase">You lose!</h1>
+                            <h3 id="house_proud_modal"></h3>
+                            
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-secondary text-uppercase" data-dismiss="modal" id="losing_button">play again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!------ jQuery ----->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <!------ Popper JS ----->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <!------ Bootstrap CDN ----->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <!------ Linked JavaScript File ----->
             <script src="js/hangman.js"></script>
         </body>
     </html>
