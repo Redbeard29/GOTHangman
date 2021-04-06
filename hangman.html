@@ -26,7 +26,7 @@
                     <div class="container-fluid text-white pt-5 pb-3">
                         <div class="row align-items-center">
                             <div class="col-2 text-left pl-lg-4" id="new_game_display">
-                                <a href="/index.html" id="home_link"><i class="fas fa-home fa-4x text-white d-block"></i></a>
+                                <i class="fas fa-home fa-4x text-white d-block" id="home_link"></i>
                             </div>
                             <div class="col-8 text-center" id="house_display">
                                 <img alt="image of chosen house here" id="chosen_house_sigil_left" class="d-none d-lg-inline-block">
@@ -86,43 +86,49 @@
                 </div>
             </div>
             
+            <!--- Winning Modal -->
             <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-labelledby="winningModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="modal-content bg-transparent border-light" id="winning_modal_body">
+                        <div class="modal-body text-center text-white">
+                            <h1 class="display-3 text-uppercase">Solved</h1>
+                            <img alt="house sigil here" id="winning_modal_sigil" class="my-3">
+                            <h3 class="text-uppercase mt-2" id="house_proud_modal"></h3>
                         </div>
-                        <div class="modal-body text-center">
-                            <h1 class="text-uppercase">You win!</h1>
-                            <h3 id="house_proud_modal"></h3>
-
-                        </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-secondary text-uppercase" data-dismiss="modal" id="winning_button">next puzzle</button>
+                        <div class="modal-footer justify-content-center" id="winning_modal_footer">
+                            <button type="button" class="btn btn-lg btn-outline-light font-weight-bold text-uppercase" data-dismiss="modal" id="winning_button">next puzzle</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!--- Losing Modal -->
             <div class="modal fade" id="losingModal" tabindex="-1" role="dialog" aria-labelledby="losingModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="modal-content bg-transparent border-light" id="losing_modal_body">
+                        <div class="modal-body text-center text-white">
+                            <h1 class="display-3 text-uppercase">You lose</h1>
+                            <img alt="house sigil here" id="losing_modal_sigil" class="my-3">
+                            <h3 class="text-uppercase" id="house_shame_modal"></h3>
                         </div>
-                        <div class="modal-body text-center">
-                            <h1 class="text-uppercase">You lose!</h1>
-                            <h3 id="house_proud_modal"></h3>
-                            
+                        <div class="modal-footer justify-content-center" id="losing_modal_footer">
+                            <button type="button" class="btn btn-lg btn-outline-light font-weight-bold text-uppercase" data-dismiss="modal" id="losing_button">try again</button>
                         </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-secondary text-uppercase" data-dismiss="modal" id="losing_button">play again</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--- Home Modal -->
+            <div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content bg-transparent border-light" id="home_modal_body">
+                        <div class="modal-body text-center text-white">
+                            <h1 class="text-uppercase">Are you sure you want to go home?</h1>
+                            <h3 class="text-uppercase mt-4">All progress will be lost</h3>
+                        </div>
+                        <div class="modal-footer justify-content-around" id="home_modal_footer">
+                            <button type="button" class="btn btn-lg btn-outline-light font-weight-bold text-uppercase" data-dismiss="modal" id="never_mind_button">never mind</button>
+                            <a href="/index.html" class="btn btn-lg btn-outline-light font-weight-bold text-uppercase" id="home_button" role="button">go home</a>
                         </div>
                     </div>
                 </div>

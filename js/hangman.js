@@ -102,6 +102,10 @@ $(document).ready(function(){
     $('#chosen_house_sigil_left').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
     $('#chosen_house_sigil_right').attr("src", "images/house" + localStorage.getItem('chosen_house') + ".png");
 
+    //Display house sigils in winning and losing modals
+    $('#winning_modal_sigil').attr('src', 'images/house' + localStorage.getItem('chosen_house') + '.png');
+    $('#losing_modal_sigil').attr('src', 'images/house' + localStorage.getItem('chosen_house') + '.png');
+
     // Add letters to guessedLetters array on click
     $('#letter_column h1').click(function(){
         const letter = $(this).attr('id');
@@ -114,6 +118,7 @@ $(document).ready(function(){
             formatWord(letter);
             if(win){
                 $('#winningModal').modal('show');
+                $('#main_game_body').css('opacity', '0.3');
             }
         }
         else{
@@ -145,9 +150,14 @@ $(document).ready(function(){
             formatWord(letter);
             if(lose){
                 $('#losingModal').modal('show');
+                $('#main_game_body').css('opacity', '0.3');
             }
         }
     });
+
+    $('#house_proud_modal').html('You have brought pride <br> to house ' + localStorage.getItem('chosen_house'));
+
+    $('#house_shame_modal').html('You have brought shame <br> to house ' + localStorage.getItem('chosen_house'));
 
     //Refresh page on win to start new game
     $("#winning_button").click(function(){
@@ -161,6 +171,17 @@ $(document).ready(function(){
         location.reload();
     });
 
+    //Modal to go back to home page
+    $("#home_link").click(function(){
+        $('#homeModal').modal('show');
+        $('#main_game_body').css('opacity', '0.3');
+    });
+
+    $('#never_mind_button').click(function(){
+        $('#homeModal').hide('slow');
+        location.reload();
+    });
+
     //Sets default house to House Arryn on selection page
     if(document.URL.includes('choose_house')){
         localStorage.setItem('chosen_house', 'Arryn');
@@ -169,6 +190,7 @@ $(document).ready(function(){
 });
 
 
+document.getElementById('house_proud_modal').innerHTML = 
 //Display guesses left
 document.getElementById('guesses').innerHTML += guesses;
 //Display number of wins
