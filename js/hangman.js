@@ -75,11 +75,13 @@ function checkWinOrLoss(currentWordStatus){
     let wordWithoutSpaces = word.replace(/\s/g, '');
     let guessedWordWithoutSpaces = currentWordStatus.replace(/\s/g, '');
     if(wordWithoutSpaces === guessedWordWithoutSpaces){
+        $('.letters').off('click');
         console.log("You win!")
         win = true;
         //Call winCount function to increment wins
     }
     else if(guesses === 0){
+        $('.letters').off('click');
         console.log("You lose!");
         lose = true;
     }
