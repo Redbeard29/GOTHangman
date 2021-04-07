@@ -18,7 +18,7 @@ const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bast
 
 //Logic for hangman.html
 let guesses = 6;
-let wins = 0;
+let points = parseInt(localStorage.getItem('points'));
 let guessedLetters = [];
 let win = false;
 let lose = false;
@@ -50,6 +50,11 @@ function formatWord(){
     checkWinOrLoss(currentWordStatus);
 }
 
+function showWord(){
+    setTimeout(function(){
+        document.getElementById('word_spotlight').innerHTML = word;
+    }, 300);
+}
 
 function createLetters(){
     let letterList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter =>
@@ -71,12 +76,11 @@ function checkWinOrLoss(currentWordStatus){
     let guessedWordWithoutSpaces = currentWordStatus.replace(/\s/g, '');
     if(wordWithoutSpaces === guessedWordWithoutSpaces){
         console.log("You win!")
-        wins ++;
         win = true;
+        //Call winCount function to increment wins
     }
     else if(guesses === 0){
         console.log("You lose!");
-        wins = 0;
         lose = true;
     }
 }
@@ -117,8 +121,13 @@ $(document).ready(function(){
             //Call formatWord, which will check for win
             formatWord(letter);
             if(win){
-                $('#winningModal').modal('show');
-                $('#main_game_body').css('opacity', '0.3');
+                currentGamePoints = guesses;
+                localStorage.setItem('points', (points + currentGamePoints));
+                setTimeout(function(){
+                    $('#winningModal').modal('show');
+                    $('#point_count').html('Points: ' + guesses);
+                    $('#main_game_body').css('opacity', '0.3');
+                }, 500);
             }
         }
         else{
@@ -149,14 +158,17 @@ $(document).ready(function(){
             //Call format word, which will check for loss
             formatWord(letter);
             if(lose){
-                $('#losingModal').modal('show');
-                $('#main_game_body').css('opacity', '0.3');
+                showWord();
+                setTimeout(function(){
+                    $('#losingModal').modal('show');
+                    $('#main_game_body').css('opacity', '0.3');
+                    localStorage.setItem('points', 0);
+                }, 1000);
             }
         }
     });
 
     $('#house_proud_modal').html('You have brought pride <br> to house ' + localStorage.getItem('chosen_house'));
-
     $('#house_shame_modal').html('You have brought shame <br> to house ' + localStorage.getItem('chosen_house'));
 
     //Refresh page on win to start new game
@@ -184,17 +196,17 @@ $(document).ready(function(){
 
     //Sets default house to House Arryn on selection page
     if(document.URL.includes('choose_house')){
+        localStorage.setItem('points', 0);
         localStorage.setItem('chosen_house', 'Arryn');
     }
     
 });
 
 
-document.getElementById('house_proud_modal').innerHTML = 
+document.getElementById('points').innerHTML = "Points: " + points; 
 //Display guesses left
 document.getElementById('guesses').innerHTML += guesses;
-//Display number of wins
-document.getElementById('wins').innerHTML += wins;
+
 
 
 formatWord();
