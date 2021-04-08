@@ -87,8 +87,14 @@ body #overlay {
   height: 130px;
 }
 
-.scream{
+.dead{
   height: 115px;
+  opacity: 0.5;
+}
+
+.fire{
+  height: 100px;
+  opacity: 0.5;
 }
 
 .logs{

@@ -146,13 +146,14 @@ $(document).ready(function(){
             let hangmanTemp = hangmanIdx.attr('src');
             hangmanIdx.attr('src', hangmanIdx.attr('alt-src'));
             hangmanIdx.attr('alt-src', hangmanTemp);
-            hangmanIdx.removeClass('hangman').addClass('scream').addClass('mb-3');
+            hangmanIdx.removeClass('hangman').addClass('dead').addClass('mb-3');
             
             // same concept but with fire index
             let fireIdx = $('#fire_pos_' + guesses);
             let fireTemp = fireIdx.attr('src');
             fireIdx.attr('src', fireIdx.attr('alt-src'));
             fireIdx.attr('alt-src', fireTemp);
+            fireIdx.removeClass('logs').addClass('fire');
 
             //Replace html guess count with correctly decremented number
             $('#guesses').html('Guesses: ' + guesses);
