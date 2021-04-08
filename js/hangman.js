@@ -210,7 +210,7 @@ $(document).ready(function(){
     if(document.URL.includes('choose_house')){
         localStorage.setItem('best', 0);
         localStorage.setItem('points', 0);
-        localStorage.setItem('chosen_house', 'Arryn');
+        localStorage.setItem('chosen_house', 'arryn');
     }
 });
 
