@@ -17,8 +17,8 @@ body #overlay {
 #header h1 {
   font-weight: 450;}
 
-#swords{
-  height: 200px;
+#swordsandshield{
+  height: 250px;
 }
 
 #sword_card, #choose_house_card{
@@ -33,12 +33,14 @@ body #overlay {
   border-top: 4px solid white;
 }
 
+
 .sigils{
   height: 150px;
+  opacity: 0.6;
 }
 
 .active{
-  border: 4px solid white;
+  opacity: 1;
 }
 
 #home_link{
@@ -89,12 +91,12 @@ body #overlay {
 
 .dead{
   height: 115px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .fire{
   height: 100px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .logs{
