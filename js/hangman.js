@@ -114,12 +114,12 @@ $(document).ready(function(){
     $('#chosen_house').html('for house ' + localStorage.getItem('chosen_house'));
 
     // Display chosen house sigils on hangman.html page
-    $('#chosen_house_sigil_left').attr("src", "../images/house" + localStorage.getItem('chosen_house') + ".png");
-    $('#chosen_house_sigil_right').attr("src", "../images/house" + localStorage.getItem('chosen_house') + ".png");
+    $('#chosen_house_sigil_left').attr("src", "/images/house" + localStorage.getItem('chosen_house') + ".png");
+    $('#chosen_house_sigil_right').attr("src", "/images/house" + localStorage.getItem('chosen_house') + ".png");
 
     //Display house sigils in winning and losing modals
-    $('#winning_modal_sigil').attr('src', '../images/house' + localStorage.getItem('chosen_house') + '.png');
-    $('#losing_modal_sigil').attr('src', '../images/house' + localStorage.getItem('chosen_house') + '.png');
+    $('#winning_modal_sigil').attr('src', '/images/house' + localStorage.getItem('chosen_house') + '.png');
+    $('#losing_modal_sigil').attr('src', '/images/house' + localStorage.getItem('chosen_house') + '.png');
 
     // Add letters to guessedLetters array on click
     $('#letter_column h1').click(function(){
