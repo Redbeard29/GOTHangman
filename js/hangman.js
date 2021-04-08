@@ -212,7 +212,6 @@ $(document).ready(function(){
         localStorage.setItem('points', 0);
         localStorage.setItem('chosen_house', 'Arryn');
     }
-    
 });
 
 //Display highest number of consecutive points
