@@ -71,7 +71,7 @@ function createLetters(){
     let letterList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter =>
         `
             <h1
-                class="d-inline-block display-4 font-weight-bold text-center mr-2 mt-2 py-2 letters"
+                class="d-inline-block font-weight-bold text-center mr-2 mt-2 py-2 letters"
                 id="` + letter + `"
             >
                 ` + letter + `

@@ -23,35 +23,36 @@
             <div id="main_game_body" class="pb-5">
                 <div id="overlay"></div>
                 <div id="showcase">
-                    <div class="container-fluid text-white pt-5 pb-3">
+                    <div class="container-fluid text-white pt-3">
                         <div class="row align-items-center">
-                            <div class="col-2 text-left pl-lg-4" id="new_game_display">
-                                <i class="fas fa-home fa-4x text-white d-block" id="home_link"></i>
+                            <div class="col-2 pl-lg-4" id="new_game_display">
+                                <i class="fas fa-home fa-3x text-white" id="home_link"></i>
+                                <i class="fas fa-question-circle fa-3x text-white ml-2"></i>
                             </div>
                             <div class="col-8 text-center" id="house_display">
                                 <img alt="image of chosen house here" id="chosen_house_sigil_left" class="d-none d-lg-inline-block">
                                 <h2 class="text-uppercase text-white font-weight-bold d-inline-block mx-3" id="chosen_house">For house </h2>
                                 <img alt="image of chosen house here" id="chosen_house_sigil_right" class="d-none d-lg-inline-block">
                             </div>
-                            <div class="col-2 text-center pr-lg-4" id="guess_display">
-                                <h3 class="text-right text-uppercase" id="points"></h3>
-                                <h3 class="text-right text-uppercase" id="best"></h3>
+                            <div class="col-2 pr-lg-4" id="guess_display">
+                                <h4 class="text-right text-uppercase" id="points"></h4>
+                                <h4 class="text-right text-uppercase" id="best"></h4>
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid text-white">
+                    <div class="container-fluid text-white my-3">
                         <div class="row align-items-center" id="word_display">
                             <div class="col text-center pb-2 text-center">
                                 <h1 class="display-4 text-uppercase" id="word_spotlight"></h1>
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid my-4 pl-5" id="main_body_container">
+                    <div class="container my-2 pl-5" id="main_body_container">
                         <div class="row">
                             <!---- letter column -->
-                            <div class="col text-white" id="letter_column"></div>
+                            <div class="col-7 text-white" id="letter_column"></div>
                             <!---- larger hangman column -->
-                            <div class="col text-white text-center pr-5">
+                            <div class="col-5 text-white text-center pr-5">
                                 <div class="row mt-3">
                                     <div class="col-4">
                                         <img src="images/hangman.png" alt-src="images/dead.png" alt="hangman" id="hangman_pos_5" class="d-block hangman mx-auto">
