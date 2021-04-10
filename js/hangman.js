@@ -164,9 +164,6 @@ $(document).ready(function(){
             fireIdx.attr('alt-src', fireTemp);
             fireIdx.removeClass('logs').addClass('fire');
 
-            //Replace html guess count with correctly decremented number
-            $('#guesses').html('Guesses: ' + guesses);
-
             //Call format word, which will check for loss
             formatWord(letter);
             if(lose){
@@ -206,7 +203,7 @@ $(document).ready(function(){
         location.reload();
     });
 
-    //Sets default house to House Arryn on selection page
+    //Sets best to 0, points to 0, and house to House Arryn every time user goes to selection page
     if(document.URL.includes('choose_house')){
         localStorage.setItem('best', 0);
         localStorage.setItem('points', 0);
@@ -218,10 +215,6 @@ $(document).ready(function(){
 document.getElementById('best').innerHTML = "Best: " + best;
 //Display current point tally
 document.getElementById('points').innerHTML = "Points: " + points; 
-//Display guesses left
-document.getElementById('guesses').innerHTML += guesses;
-
-
 
 formatWord();
 createLetters();
