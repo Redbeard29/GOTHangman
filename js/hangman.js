@@ -203,6 +203,17 @@ $(document).ready(function(){
         location.reload();
     });
 
+    //Modal to show rules
+    $("#rules_link").click(function(){
+        $('#rulesModal').modal('show');
+        $('#main_game_body').css('opacity', '0.3');
+    });
+
+    $('#play_button').click(function(){
+        $('#rulesModal').hide('slow');
+        location.reload();
+    });
+
     //Sets best to 0, points to 0, and house to House Arryn every time user goes to selection page
     if(document.URL.includes('choose_house')){
         localStorage.setItem('best', 0);
