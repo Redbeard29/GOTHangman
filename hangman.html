@@ -23,7 +23,7 @@
             <div id="main_game_body" class="pb-5">
                 <div id="overlay"></div>
                 <div id="showcase">
-                    <div class="container-fluid text-white pt-3">
+                    <div class="container-fluid text-white pt-4">
                         <div class="row align-items-center">
                             <div class="col-2 pl-lg-4" id="new_game_display">
                                 <i class="fas fa-home fa-3x text-white" id="home_link"></i>
@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-8 text-center" id="house_display">
                                 <img alt="image of chosen house here" id="chosen_house_sigil_left" class="d-none d-lg-inline-block">
-                                <h2 class="text-uppercase text-white font-weight-bold d-inline-block mx-3" id="chosen_house">For house </h2>
+                                <h3 class="text-uppercase text-white font-weight-bold d-inline-block mx-3" id="chosen_house">For house </h3>
                                 <img alt="image of chosen house here" id="chosen_house_sigil_right" class="d-none d-lg-inline-block">
                             </div>
                             <div class="col-2 pr-lg-4" id="guess_display">
@@ -140,11 +140,13 @@
             <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content bg-transparent border-light" id="rules_modal_body">
+                        <div class="modal-header justify-content-center">
+                            <h1 class="display-4 modal-title text-uppercase text-white">Rules</h1>
+                        </div>
                         <div class="modal-body text-center text-white">
-                            <h1 class="text-uppercase">Rules</h1>
-                            <h6 class="text-uppercase mt-3">The blanks represent a character, place, or quote from Game of Thrones. Guess a letter to see if it’s in the word. After 6 incorrect guesses, you lose.</h6>
-                            <h6 class="text-uppercase mt-3">The number of points you gain on each turn is determined by how many of your 6 incorrect guesses you have not yet used. After you lose a turn, your points will be reset to 0. “Best” keeps track of the highest number of consecutive points won in a given session. </h6>
-                            <h6 class="text-uppercase mt-3">The words displayed will not necessarily be related to the house you’ve chosen. </h6>
+                            <h5 class="text-uppercase mt-2">The blanks represent a character, place, or quote from Game of Thrones. Guess a letter to see if it’s in the word. After 6 incorrect guesses, you lose.</h5>
+                            <h5 class="text-uppercase mt-4">The number of points you gain on each turn is determined by how many of your 6 incorrect guesses you have not yet used. If you lose a turn, your points will be reset to 0. “Best” keeps track of the highest number of consecutive points won in a given session.</h5>
+                            <h5 class="text-uppercase mt-4">The words displayed will not necessarily be related to the house you’ve chosen.</h5>
                         </div>
                         <div class="modal-footer justify-content-around" id="rules_modal_footer">
                             <button type="button" class="btn btn-lg btn-outline-light font-weight-bold text-uppercase" data-dismiss="modal" id="play_button">Play</button>
