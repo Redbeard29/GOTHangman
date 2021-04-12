@@ -1,7 +1,7 @@
 const word_array = ["Aegon the Conqueror", "Arya Stark", "The Battle of the Bastards", "Beric Dondarrion", "Brandon Stark", 
 "Brienne of Tarth", "Bronn", "Casterly Rock", "Catelyn Stark", "Cersei Lannister", "Chaos is a ladder", "The Children", 
 "Daario Naharis", "Daenerys Targaryen", "Davos Seaworth", "Dorne", "Dragonglass", "The Drowned God", "Eddard Stark", "Edmure Tully", 
-"Ellaria Sand", "The Eyrie", "The Fist of the First Men", "The Free Folk", "Gendry Baratheon", "Grey Worm", "Joffrey Baratheon", 
+"Ellaria Sand", "The Eyrie", "Family, Duty, Honor", "The Fist of the First Men", "The Free Folk", "Gendry Baratheon", "Grey Worm", "Joffrey Baratheon", 
 "Gilly", "A Girl is no one", "Highgarden", "The High Septon", "Hodor", "I drink and I know things", "Iron Islands", "The Iron Throne", 
 "Jaime Lannister", "Jaqen Hghar", "Jojen Reed", "Jon Snow", "Jorah Mormont", "Khal Drogo", "King Robert", "King's Landing", 
 "Lady Melisandre", "Loras Tyrell","Longclaw", "The Lord of Light", "Lysa Arryn", "Margaery Tyrell", "Mhysa", "Missandei", "Mother of Dragons", 
@@ -198,6 +198,7 @@ $(document).ready(function(){
         $('#main_game_body').css('opacity', '0.3');
     });
 
+    //Allow user to stay on page from go home modal
     $('#never_mind_button').click(function(){
         $('#homeModal').hide('slow');
         location.reload();
