@@ -23,15 +23,13 @@
         <body id="index_body">
             <div id="overlay"></div>
             <div id="homepage_showcase">
-                <div class="container-fluid text-white py-3 px-5" id="homepage_heading_display">
+                <!--- Homepage display container -->
+                <div class="container-fluid d-none d-lg-block text-white py-3 px-5" id="homepage_heading_display">
                     <!--- Heading for full screen -->
-                    <h1 class="d-none d-md-block display-4 text-uppercase text-center pt-3">Welcome to</h1>
-                    <h1 class="d-none d-md-block display-4 text-uppercase text-center">Game of Thrones Hangman.</h1>
-                    <h1 class="d-none d-md-block display-4 text-uppercase text-center pb-3">Winter is Coming!</h1>
+                    <h1 class="d-none d-lg-block display-4 text-uppercase text-center pt-3">Welcome to</h1>
+                    <h1 class="d-none d-lg-block display-4 text-uppercase text-center">Game of Thrones Hangman.</h1>
+                    <h1 class="d-none d-lg-block display-4 text-uppercase text-center pb-3">Winter is Coming!</h1>
                     <!--- Heading for md and below -->
-                    <h1 class="d-md-none text-uppercase text-center pt-3">Welcome to</h1>
-                    <h1 class="d-md-none text-uppercase text-center">Game of Thrones Hangman.</h1>
-                    <h1 class="d-md-none text-uppercase text-center pb-3">Winter is Coming!</h1>
                     <div class="row justify-content-center pt-5 pt-md-3">
                         <div class="col-xl-4 col-md-6 pb-5">
                             <div class="card bg-transparent border-light border-rounded mt-2" id="sword_card">
@@ -45,6 +43,15 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!--- Sizing message --->
+                <div class="container-fluid d-block d-lg-none py-5" id="sizing_message">
+                    <h1 class="text-white text-center text-uppercase mt-0 mt-md-5">This game is intended to be played on computers and tablets only.</h1>
+                    <img src="images/tablet.png" alt="tablet on side" class="my-5 d-block mx-auto" id="tablet_image">
+                    <h1 class="text-white text-center text-uppercase mb-0 mb-md-5">If you're on a tablet, turn it so that the orientation is landscape.</h1>
+                </div>
+
             </div>
             
             <!------ jQuery ----->

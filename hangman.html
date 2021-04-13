@@ -23,7 +23,8 @@
             <div id="main_game_body" class="pb-5">
                 <div id="overlay"></div>
                 <div id="showcase">
-                    <div class="container-fluid text-white pt-4">
+
+                    <div class="container-fluid text-white pt-4 d-none d-lg-block">
                         <div class="row align-items-center">
                             <div class="col-2 pl-lg-4" id="new_game_display">
                                 <i class="fas fa-home fa-3x text-white" id="home_link"></i>
@@ -40,14 +41,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid text-white my-xl-3">
+
+                    <div class="container-fluid text-white my-xl-3 d-none d-lg-block">
                         <div class="row align-items-center" id="word_display">
                             <div class="col text-center pb-2 text-center">
                                 <h1 class="display-4 text-uppercase" id="word_spotlight"></h1>
                             </div>
                         </div>
                     </div>
-                    <div class="my-4" id="main_body_container">
+
+                    <div class="my-4 d-none d-lg-block" id="main_body_container">
                         <div class="row my-3">
                             <!---- letter column -->
                             <div class="col-7 text-white" id="letter_column"></div>
@@ -84,6 +87,14 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--- Sizing message --->
+                    <div class="container-fluid d-block d-lg-none py-5" id="sizing_message">
+                        <h1 class="text-white text-center text-uppercase mt-0 mt-md-5">This game is intended to be played on computers and tablets only.</h1>
+                        <img src="images/tablet.png" alt="tablet on side" class="my-5 d-block mx-auto" id="tablet_image">
+                        <h1 class="text-white text-center text-uppercase mb-0 mb-md-5">If you're on a tablet, turn it so that the orientation is landscape.</h1>
+                    </div>
+                    
                 </div>
             </div>
             

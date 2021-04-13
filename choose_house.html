@@ -23,15 +23,15 @@
             <div class="container">
                 <div id="overlay"></div>
                 <div id="showcase">
-                    <div class="container text-white p-4" id="house_heading_display">
+                    <div class="container text-white p-4 d-none d-lg-block" id="house_heading_display">
                         <div class="row align-items-center">
                             <div class="col mt-3">
                                 <h1 class="display-4 text-uppercase text-center">Choose your house</h1>
                             </div>
                         </div>
                         <div class="row justify-content-center my-3 px-2 px-md-0">
-                            <div class="col-12 mt-2">
-                                <div class="card border-light bg-transparent shadow-lg hidden_element" id="choose_house_card">
+                            <div class="col-12 my-2">
+                                <div class="card border-light bg-transparent shadow-lg hidden_element mb-lg-5" id="choose_house_card">
                                     <h3 class="card-header border-light text-center text-uppercase" id="choose_house_card_header">You have pledged your allegiance to: <br><span id="house_choice_display">House Arryn</span></h3>
                                     <div class="card-body text-center py-4" id="sigil_holder">
                                         <img src="images/housearryn.png" alt="house_arryn" class="m-2 sigils active" data-house="arryn">
@@ -53,6 +53,14 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--- Sizing message --->
+                    <div class="container-fluid d-block d-lg-none py-5" id="sizing_message">
+                        <h1 class="text-white text-center text-uppercase mt-0 mt-md-5">This game is intended to be played on computers and tablets only.</h1>
+                        <img src="images/tablet.png" alt="tablet on side" class="my-5 d-block mx-auto" id="tablet_image">
+                        <h1 class="text-white text-center text-uppercase mb-0 mb-md-5">If you're on a tablet, turn it so that the orientation is landscape.</h1>
+                    </div>
+
                 </div>
             </div>
             <!------ jQuery ----->

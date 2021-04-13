@@ -3,7 +3,7 @@ body{
   min-height: 100%;
   font-family: "Della Respira", serif;
   position: relative; }
-body #word_display, body #guess_display, body #new_game_display, body #house_display, body #homepage_heading_display, body #house_heading_display, body #modal_button{
+body #word_display, body #guess_display, body #new_game_display, body #house_display, body #homepage_heading_display, body #house_heading_display, body #modal_button, #sizing_message{
   position: relative;
   z-index: 2; }
 body #overlay {
@@ -31,6 +31,10 @@ body #overlay {
 
 #sword_card_footer, #choose_house_card_footer{
   border-top: 4px solid white;
+}
+
+#tablet_image{
+  height: 250px;
 }
 
 .sigils{
@@ -148,35 +152,9 @@ body #overlay {
   }
 }
 
-@media(max-width: 991.98px){
-  #main_body_container{
-    margin-left: 2%;
-    margin-right: 2%;
-  }
-
-  .letters{
-    border: 4px solid white;
-    width: 70px;
-  }
-
-  .correctly_guessed_letters{
-    color: #cdd0d3;
-    border: 4px solid #cdd0d3;
-    width: 70px;
-    opacity: 0.5;
-  }
-  
-  .incorrectly_guessed_letters{
-    color: #dd3444;
-    border: 4px solid #dd3444;
-    width: 70px;
-    opacity: 0.5;
-  }
-}
-
-@media(max-width: 1200px){
+@media(min-width: 1200px){
   .sigils{
-    height: 140px;
+    height: 150px;
     opacity: 0.6;
   }
   .active{
@@ -184,9 +162,9 @@ body #overlay {
   }
 }
 
-@media(max-width: 992px){
+@media(min-width: 992px) and (max-width: 1199.98px){
   .sigils{
-    height: 130px;
+    height: 135px;
     opacity: 0.6;
   }
   .active{
