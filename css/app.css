@@ -60,28 +60,9 @@ body #overlay {
   z-index: 1;
 }
 
-.letters{
-  border: 4px solid white;
-  width: 80px;
-}
-
 .letters:active{
   transform: scale(0.90);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0,);
-}
-
-.correctly_guessed_letters{
-  color: #cdd0d3;
-  border: 4px solid #cdd0d3;
-  width: 80px;
-  opacity: 0.5;
-}
-
-.incorrectly_guessed_letters{
-  color: #dd3444;
-  border: 4px solid #dd3444;
-  width: 80px;
-  opacity: 0.5;
 }
 
 .hangman{
@@ -112,6 +93,85 @@ body #overlay {
 
 #winning_modal_footer, #losing_modal_footer, #home_modal_footer{
   border-top: 4px solid white;
+}
+
+
+@media(min-width: 1200px){
+  #main_body_container{
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+
+  .letters{
+    border: 4px solid white;
+    width: 80px;
+  }
+
+  .correctly_guessed_letters{
+    color: #cdd0d3;
+    border: 4px solid #cdd0d3;
+    width: 80px;
+    opacity: 0.5;
+  }
+  
+  .incorrectly_guessed_letters{
+    color: #dd3444;
+    border: 4px solid #dd3444;
+    width: 80px;
+    opacity: 0.5;
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199.98px){
+  #main_body_container{
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  .letters{
+    border: 4px solid white;
+    width: 80px;
+  }
+
+  .correctly_guessed_letters{
+    color: #cdd0d3;
+    border: 4px solid #cdd0d3;
+    width: 80px;
+    opacity: 0.5;
+  }
+  
+  .incorrectly_guessed_letters{
+    color: #dd3444;
+    border: 4px solid #dd3444;
+    width: 80px;
+    opacity: 0.5;
+  }
+}
+
+@media(max-width: 991.98px){
+  #main_body_container{
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .letters{
+    border: 4px solid white;
+    width: 70px;
+  }
+
+  .correctly_guessed_letters{
+    color: #cdd0d3;
+    border: 4px solid #cdd0d3;
+    width: 70px;
+    opacity: 0.5;
+  }
+  
+  .incorrectly_guessed_letters{
+    color: #dd3444;
+    border: 4px solid #dd3444;
+    width: 70px;
+    opacity: 0.5;
+  }
 }
 
 @media(max-width: 1200px){
